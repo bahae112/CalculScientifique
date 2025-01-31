@@ -1,0 +1,18 @@
+function [racine, iterations] = pointfixe(g, x0, precision, Nmax)
+    x1 = g(x0);
+    iterations = 0;
+
+    while abs(x1 - x0) > precision && iterations < Nmax
+        x0 = x1;
+        x1 = g(x0);
+        iterations = iterations + 1;
+    end
+
+    racine = x1;
+    iterations = iterations;
+end
+
+
+
+
+   
